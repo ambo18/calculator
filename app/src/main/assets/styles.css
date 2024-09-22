@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1C1C1E;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: 400px; /* Limits the width for tablets/large screens */
+  background-color: #2C2C2E;
+  padding: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.display {
+  height: 20%; /* Adjust display height */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  background-color: #1C1C1E;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#previous-value {
+  color: #787878;
+  font-size: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#current-value {
+  font-size: 2rem; /* Maximum font size */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: font-size 0.2s ease; /* Smooth transition when font size changes */
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  height: 75%; /* Adjust the height for buttons */
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #505050;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.gray {
+  background-color: #A5A5A5;
+}
+
+button.orange {
+  background-color: #FF9500;
+}
+
+button.orange:hover {
+  background-color: #FF9F1C;
+}
+
+button.gray:hover, button:hover {
+  background-color: #6B6B6B;
+}
+
+button.zero {
+  grid-column: span 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  #current-value {
+    font-size: 2.5rem;
+  }
+
+  #previous-value {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 320px) {
+  #current-value {
+    font-size: 2rem;
+  }
+
+  #previous-value {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+  }
+}
